@@ -1,0 +1,1 @@
+c:\xampp\php\php -S skills-it.hu:8002
