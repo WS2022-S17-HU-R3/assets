@@ -1,0 +1,272 @@
+{
+  "accomodations": [
+    {
+      "id": 1,
+      "name": "Hotel President",
+      "price": 59.5,
+      "description": "Located right in the business, governmental and historical area of Budapest, Hotel President is a perfect choice for world explorers and business travellers as well.",
+      "img": "1.webp"
+    },
+    {
+      "id": 2,
+      "name": "Gold Hotel",
+      "price": 35,
+      "description": "30 comfortably furnished rooms are offered by Gold Hotel **** Zakopane to guests looking for accommodation in Zakopane. The hotel ensures a pleasant stay for you and your family by offering chield-friendly services. You are also welcome at the hotel for a fine local meal in the restaurant.",
+      "img": "2.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Alta Moda Fashion Hotel",
+      "price": 50,
+      "description": "The Alta Moda Fashion Hotel is a fully renovated four-star hotel, that represents fashionable elegance in the heart of the city to meet our guests’ needs.",
+      "img": "3.webp"
+    },
+    {
+      "id": 4,
+      "name": "Vila Malinska",
+      "price": 75,
+      "description": "This property is 3 minutes walk from the beach. Located in the centre of Malinska, less than 100 m from the sea, Guesthouse Villa Adria offers a shared terrace and free Wi-Fi in public areas. An on-site à la carte restaurant and a breakfast buffet cater to the guests' culinary needs",
+      "img": "4.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Danubius Health Spa",
+      "price": 100,
+      "description": "Voted the best hotel in Romania in 2004, the first four-star hotel in Sovata standing just 200m from the unique salty Bear Lake.",
+      "img": "5.webp"
+    },
+    {
+      "id": 4,
+      "name": "Ferienhaus Regina Werfenweng",
+      "price": 60,
+      "description": "This peaceful and friendly holiday house in Salzburg is surrounded by mountains and forests and is the best choice for those who want to have a good rest. Our house is situated in a calm place with a view of the Hochkönig-mountain mass, right at the valley station of the cableway IKARUS. In winter you can spend here many of days skiing and in summer you can use it for long walking trips and glider flights.",
+      "img": "6.jpg"
+    }
+  ],
+  "bookings": [
+    {
+      "id": 1,
+      "accomodationId": 1,
+      "checkIn": "2021-07-01T00:00:00.000Z",
+      "checkOut": "2021-07-04T00:00:00.000Z",
+      "bookingDate": "2021-07-01T00:00:00.000Z",
+      "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+    },
+    {
+      "id": 2,
+      "accomodationId": 1,
+      "checkIn": "2021-07-06T00:00:00.000Z",
+      "checkOut": "2021-07-11T00:00:00.000Z",
+      "bookingDate": "2021-07-03T00:00:00.000Z",
+      "comment": "Vestibulum scelerisque nulla non cursus consequat"
+    },
+    {
+      "id": 3,
+      "accomodationId": 1,
+      "checkIn": "2021-07-15T00:00:00.000Z",
+      "checkOut": "2021-07-22T00:00:00.000Z",
+      "bookingDate": "2021-07-05T00:00:00.000Z",
+      "comment": "Phasellus id lobortis risus"
+    },
+    {
+      "id": 4,
+      "accomodationId": 1,
+      "checkIn": "2021-07-28T00:00:00.000Z",
+      "checkOut": "2021-07-30T00:00:00.000Z",
+      "bookingDate": "2021-07-07T00:00:00.000Z",
+      "comment": "Fusce eleifend felis in nulla fringilla efficitur"
+    },
+    {
+      "id": 5,
+      "accomodationId": 1,
+      "checkIn": "2021-08-07T00:00:00.000Z",
+      "checkOut": "2021-08-11T00:00:00.000Z",
+      "bookingDate": "2021-07-09T00:00:00.000Z",
+      "comment": "Ut euismod lorem sed libero cursus viverra"
+    },
+    {
+      "id": 6,
+      "accomodationId": 1,
+      "checkIn": "2021-08-21T00:00:00.000Z",
+      "checkOut": "2021-08-29T00:00:00.000Z",
+      "bookingDate": "2021-07-11T00:00:00.000Z",
+      "comment": "Duis placerat mi sodales odio accumsan, sed dignissim nisi tincidunt"
+    },
+    {
+      "id": 7,
+      "accomodationId": 2,
+      "checkIn": "2021-07-01T00:00:00.000Z",
+      "checkOut": "2021-07-03T00:00:00.000Z",
+      "bookingDate": "2021-07-01T00:00:00.000Z",
+      "comment": "Phasellus varius fermentum malesuada"
+    },
+    {
+      "id": 8,
+      "accomodationId": 2,
+      "checkIn": "2021-07-05T00:00:00.000Z",
+      "checkOut": "2021-07-12T00:00:00.000Z",
+      "bookingDate": "2021-07-03T00:00:00.000Z",
+      "comment": "Etiam elementum eros ac lacus rhoncus, sed aliquet ligula aliquam"
+    },
+    {
+      "id": 9,
+      "accomodationId": 2,
+      "checkIn": "2021-07-16T00:00:00.000Z",
+      "checkOut": "2021-07-20T00:00:00.000Z",
+      "bookingDate": "2021-07-05T00:00:00.000Z",
+      "comment": "Nam sed ex condimentum, venenatis dolor eget, hendrerit sem"
+    },
+    {
+      "id": 10,
+      "accomodationId": 2,
+      "checkIn": "2021-07-26T00:00:00.000Z",
+      "checkOut": "2021-08-04T00:00:00.000Z",
+      "bookingDate": "2021-07-07T00:00:00.000Z",
+      "comment": "Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus"
+    },
+    {
+      "id": 11,
+      "accomodationId": 2,
+      "checkIn": "2021-08-12T00:00:00.000Z",
+      "checkOut": "2021-08-17T00:00:00.000Z",
+      "bookingDate": "2021-07-09T00:00:00.000Z",
+      "comment": "Mauris eu feugiat magna, quis vestibulum nisi"
+    },
+    {
+      "id": 12,
+      "accomodationId": 2,
+      "checkIn": "2021-08-27T00:00:00.000Z",
+      "checkOut": "2021-08-29T00:00:00.000Z",
+      "bookingDate": "2021-07-11T00:00:00.000Z",
+      "comment": "Aliquam lobortis suscipit libero, vitae consectetur est bibendum dictum"
+    },
+    {
+      "id": 13,
+      "accomodationId": 2,
+      "checkIn": "2021-09-10T00:00:00.000Z",
+      "checkOut": "2021-09-17T00:00:00.000Z",
+      "bookingDate": "2021-07-13T00:00:00.000Z",
+      "comment": "Mauris sagittis erat nec tellus sollicitudin sodales"
+    },
+    {
+      "id": 14,
+      "accomodationId": 3,
+      "checkIn": "2021-07-01T00:00:00.000Z",
+      "checkOut": "2021-07-02T00:00:00.000Z",
+      "bookingDate": "2021-07-01T00:00:00.000Z",
+      "comment": "Fusce id pharetra est, a porttitor dui"
+    },
+    {
+      "id": 15,
+      "accomodationId": 3,
+      "checkIn": "2021-07-04T00:00:00.000Z",
+      "checkOut": "2021-07-10T00:00:00.000Z",
+      "bookingDate": "2021-07-03T00:00:00.000Z",
+      "comment": "Morbi vitae ex vitae velit convallis pulvinar vitae eget justo"
+    },
+    {
+      "id": 16,
+      "accomodationId": 3,
+      "checkIn": "2021-07-14T00:00:00.000Z",
+      "checkOut": "2021-07-18T00:00:00.000Z",
+      "bookingDate": "2021-07-05T00:00:00.000Z",
+      "comment": "Sed iaculis ultricies purus dictum semper"
+    },
+    {
+      "id": 17,
+      "accomodationId": 3,
+      "checkIn": "2021-07-24T00:00:00.000Z",
+      "checkOut": "2021-08-01T00:00:00.000Z",
+      "bookingDate": "2021-07-07T00:00:00.000Z",
+      "comment": "Suspendisse potenti"
+    },
+    {
+      "id": 18,
+      "accomodationId": 3,
+      "checkIn": "2021-08-09T00:00:00.000Z",
+      "checkOut": "2021-08-11T00:00:00.000Z",
+      "bookingDate": "2021-07-09T00:00:00.000Z",
+      "comment": "Quisque sit amet congue est"
+    },
+    {
+      "id": 19,
+      "accomodationId": 3,
+      "checkIn": "2021-08-21T00:00:00.000Z",
+      "checkOut": "2021-08-26T00:00:00.000Z",
+      "bookingDate": "2021-07-11T00:00:00.000Z",
+      "comment": "Donec ligula nibh, vulputate non magna a, rhoncus aliquam purus"
+    },
+    {
+      "id": 20,
+      "accomodationId": 3,
+      "checkIn": "2021-09-07T00:00:00.000Z",
+      "checkOut": "2021-09-10T00:00:00.000Z",
+      "bookingDate": "2021-07-13T00:00:00.000Z",
+      "comment": "Mauris ac nisl ac ex aliquet convallis"
+    },
+    {
+      "id": 21,
+      "accomodationId": 3,
+      "checkIn": "2021-09-24T00:00:00.000Z",
+      "checkOut": "2021-09-28T00:00:00.000Z",
+      "bookingDate": "2021-07-15T00:00:00.000Z",
+      "comment": "Integer at pretium urna, eu dapibus dui"
+    },
+    {
+      "id": 22,
+      "accomodationId": 4,
+      "checkIn": "2021-07-01T00:00:00.000Z",
+      "checkOut": "2021-07-05T00:00:00.000Z",
+      "bookingDate": "2021-07-01T00:00:00.000Z",
+      "comment": "Aenean convallis tincidunt eros eu tristique"
+    },
+    {
+      "id": 23,
+      "accomodationId": 4,
+      "checkIn": "2021-07-07T00:00:00.000Z",
+      "checkOut": "2021-07-10T00:00:00.000Z",
+      "bookingDate": "2021-07-03T00:00:00.000Z",
+      "comment": "Aenean venenatis nunc orci, a fringilla mi consectetur vel"
+    },
+    {
+      "id": 24,
+      "accomodationId": 4,
+      "checkIn": "2021-07-14T00:00:00.000Z",
+      "checkOut": "2021-07-20T00:00:00.000Z",
+      "bookingDate": "2021-07-05T00:00:00.000Z",
+      "comment": "Praesent nisl tellus, tempor a neque sit amet, maximus malesuada orci"
+    },
+    {
+      "id": 25,
+      "accomodationId": 4,
+      "checkIn": "2021-07-26T00:00:00.000Z",
+      "checkOut": "2021-07-30T00:00:00.000Z",
+      "bookingDate": "2021-07-07T00:00:00.000Z",
+      "comment": "Nunc auctor nunc sed magna suscipit, quis condimentum mauris tincidunt"
+    },
+    {
+      "id": 26,
+      "accomodationId": 4,
+      "checkIn": "2021-08-07T00:00:00.000Z",
+      "checkOut": "2021-08-12T00:00:00.000Z",
+      "bookingDate": "2021-07-09T00:00:00.000Z",
+      "comment": "Proin ex ligula, venenatis in lorem id, dictum bibendum nibh"
+    },
+    {
+      "id": 27,
+      "accomodationId": 4,
+      "checkIn": "2021-08-22T00:00:00.000Z",
+      "checkOut": "2021-08-24T00:00:00.000Z",
+      "bookingDate": "2021-07-11T00:00:00.000Z",
+      "comment": "Integer quis scelerisque augue, vitae pretium est"
+    },
+    {
+      "id": 28,
+      "accomodationId": 4,
+      "checkIn": "2021-09-05T00:00:00.000Z",
+      "checkOut": "2021-09-13T00:00:00.000Z",
+      "bookingDate": "2021-07-13T00:00:00.000Z",
+      "comment": "Maecenas consectetur commodo dui, id vestibulum ex vestibulum non"
+    }
+  ]
+}
