@@ -1,6 +1,11 @@
 <?php
-error_reporting(0);
-define('JSONSERVER_URL', "http://localhost:3000");
+
+error_reporting(E_ALL & ~E_NOTICE & ~E_STRICT & ~E_DEPRECATED);
+
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Headers: *");
+
+define('JSONSERVER_URL', "http://localhost:8000");
 
 // ------------------------------
 
@@ -17,7 +22,10 @@ function callAPI($method, $url, $data){
          if ($data)
             curl_setopt($curl, CURLOPT_POSTFIELDS, $data);			 					
          break;
-      default:
+	  case "DELETE":
+		 curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "DELETE");		 					
+		 break;
+	  default:
          if ($data)
             $url = sprintf("%s?%s", $url, http_build_query($data));
    }
@@ -38,59 +46,43 @@ function callAPI($method, $url, $data){
 // ------------------------------
 
 $url = $_SERVER['REQUEST_URI'];
+$method = $_SERVER['REQUEST_METHOD'];
 list($path,$params) = explode("?", $url);
 
 if(preg_match("/api/", $path)) {
-	header("Access-Control-Allow-Origin: *");
 	header('Content-Type: application/json');
-	
-	$method = 'GET';
+
+	// $method = 'GET';
 	$data = [];
 
-	// GET /api/buildings
-	if(preg_match("/api\/buildings/", $path, $match)) {
-		$js_url = JSONSERVER_URL . "/buildings";
+	// GET /api/accomodations
+	if($method === 'GET' && preg_match("/api\/accomodations/", $path, $match)) {
+		$js_url = JSONSERVER_URL . "/accomodations";
 	}
 
-	// // GET api/:buildingId/flats
-	// if(preg_match("/api\/(\d+)\/flats/", $path, $match)) {		
-	// 	$js_url = JSONSERVER_URL . "/flats";
-
-	// 	$buildingId = $match[1];
-	// 	$data['building_id'] = $buildingId;
-	// }
-
-	// GET api/flats
-	if(preg_match("/api\/flats/", $path, $match)) {		
-		$js_url = JSONSERVER_URL . "/flats";
+	// GET api/bookings
+	if($method === 'GET' && preg_match("/api\/bookings/", $path, $match)) {		
+		$js_url = JSONSERVER_URL . "/bookings";
+		if($params) {
+			list($attr,$value) = explode("=",$params);
+			$data = array( $attr."_like" => $value );
+		}		
 	}
 
-	// // PUT /api/:buildingId/flats/:flatId
-	// if(preg_match("/api\/(\d+)\/flats\/(\d+)/", $path, $match)) {		
-	// 	$js_url = JSONSERVER_URL . "/flats";
+	// GET api/accomodations/:accomodationId/bookings
+	if($method === 'GET' && preg_match("/api\/accomodations\/(\d+)\/bookings/", $path, $match)) {		
+		$js_url = JSONSERVER_URL . "/bookings?accomodationId=".$match[1];
+	}
 
-	// 	$buildingId = $match[1];
-	// 	$flatId = $match[2];
-		
-	// 	$js_url .= "/" . $flatId;
-	// 	$method = 'PUT';
-	// 	$data = file_get_contents("php://input");
-	// }
-
-	// PUT /api/flats/:id
-	if(preg_match("/api\/flats\/(\d+)/", $path, $match)) {		
-		$js_url = JSONSERVER_URL . "/flats";
-
-		$id = $match[1];
-		
-		$js_url .= "/" . $id;
-		$method = 'PUT';
+	// POST /api/bookings
+	if($method === 'POST' && preg_match("/api\/bookings/", $path, $match)) {		
+		$js_url = JSONSERVER_URL . "/bookings";
 		$data = file_get_contents("php://input");
 	}
 
-	// GET /api/customers
-	if(preg_match("/api\/customers/", $path, $match)) {
-		$js_url = JSONSERVER_URL . "/customers";
+	// GET api/bookings/:bookingId
+	if($method === 'DELETE' && preg_match("/api\/bookings\/(\d+)/", $path, $match)) {		
+		$js_url = JSONSERVER_URL . "/bookings/".$match[1];
 	}
 
 	if($_GET['_sort'] && $_GET['_order']) {
@@ -101,6 +93,8 @@ if(preg_match("/api/", $path)) {
 	if($_GET['q']) {
 		$data['q'] = $_GET['q'];
 	}
+
+	//die($js_url);
 
 	echo callAPI($method, $js_url, $data);
 }
