@@ -1,0 +1,135 @@
+{
+	"info": {
+		"_postman_id": "a7512f51-601a-4d11-b1bc-32bb64b9789f",
+		"name": "S17 2022 R3 - Accomodations",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "accomodations",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/accomodations",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"accomodations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "bookings",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/bookings",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"bookings"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "accomodation/:accomodationId/bookings",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/accomodations/3/bookings",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"accomodations",
+						"3",
+						"bookings"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "bookings (search)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/bookings?comment=sit",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"bookings"
+					],
+					"query": [
+						{
+							"key": "comment",
+							"value": "sit"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "bookings",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"accomodationId\": 6,\r\n    \"checkIn\": \"2021-07-17T00:00:00.000Z\",\r\n    \"checkOut\": \"2021-07-24T00:00:00.000Z\",\r\n    \"bookingDate\": \"2021-07-12T10:00:00.000Z\",\r\n    \"comment\": \"Test Booking from Postman\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/bookings",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"bookings"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "bookings/:bookingId",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/bookings/36",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"bookings",
+						"36"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
