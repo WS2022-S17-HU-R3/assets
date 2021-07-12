@@ -5,7 +5,7 @@ error_reporting(E_ALL & ~E_NOTICE & ~E_STRICT & ~E_DEPRECATED);
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Headers: *");
 
-define('JSONSERVER_URL', "http://localhost:8000");
+define('JSONSERVER_URL', "http://localhost:8001");
 
 // ------------------------------
 
