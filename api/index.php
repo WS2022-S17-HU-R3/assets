@@ -43,6 +43,12 @@ function callAPI($method, $url, $data){
    return $result;
 }
 
+function getBooking($id) {
+	$js_url = JSONSERVER_URL . "/bookings/".$id;
+	$response = callAPI($method, $js_url, $data);
+	return json_decode($response, true);
+}
+
 // ------------------------------
 
 $url = $_SERVER['REQUEST_URI'];
@@ -80,9 +86,28 @@ if(preg_match("/api/", $path)) {
 		$data = file_get_contents("php://input");
 	}
 
-	// GET api/bookings/:bookingId
-	if($method === 'DELETE' && preg_match("/api\/bookings\/(\d+)/", $path, $match)) {		
-		$js_url = JSONSERVER_URL . "/bookings/".$match[1];
+	// DELETE api/bookings/:bookingId
+	if($method === 'DELETE' && preg_match("/api\/bookings\/(\d+)/", $path, $match)) {
+		$id = $match[1];
+		$booking = getBooking($id);
+		$bookingDate = strtotime($booking['bookingDate']);
+		$weekDay = date('w', $deletableDate);
+		$add = [
+			0 => 3,
+			1 => 3,
+			2 => 3,
+			3 => 5,
+			4 => 5,
+			5 => 5,
+			6 => 4
+		];
+		$deletableDate = $bookingDate + $add[$weekDay]*24*60*60;
+		$now = time();
+		if(date('Y-m-d',$now) > date('Y-m-d',$deletableDate)) {
+			http_response_code(405);
+			die('You can delete it after the booking in the next 3 working days');
+		}
+		$js_url = JSONSERVER_URL . "/bookings/".$id;
 	}
 
 	if($_GET['_sort'] && $_GET['_order']) {
