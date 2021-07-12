@@ -43,8 +43,18 @@ function callAPI($method, $url, $data){
    return $result;
 }
 
+function fd($d) {
+	return date('Y-m-d',strtotime($d));
+}
+
 function getBooking($id) {
 	$js_url = JSONSERVER_URL . "/bookings/".$id;
+	$response = callAPI($method, $js_url, $data);
+	return json_decode($response, true);
+}
+
+function getBookings($accomodationId) {
+	$js_url = JSONSERVER_URL . "/bookings/?accomodationId=".$accomodationId;
 	$response = callAPI($method, $js_url, $data);
 	return json_decode($response, true);
 }
@@ -84,6 +94,18 @@ if(preg_match("/api/", $path)) {
 	if($method === 'POST' && preg_match("/api\/bookings/", $path, $match)) {		
 		$js_url = JSONSERVER_URL . "/bookings";
 		$data = file_get_contents("php://input");
+		$input = json_decode($data, true);
+		$bookings = getBookings($input['accomodationId']);
+		$from = fd($input['checkIn']);
+		$to = fd($input['checkOut']);
+		foreach($bookings as $booking) {
+			$checkIn = fd($booking['checkIn']);
+			$checkOut = fd($booking['checkOut']);
+			if($from<=$checkOut && $to>=$checkIn) {
+				http_response_code(405);
+				die("This interval isn't available.");
+			}
+		}
 	}
 
 	// DELETE api/bookings/:bookingId
